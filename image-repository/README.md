@@ -1,5 +1,7 @@
 # image-repository
 
+To run this project you will need an Imgur account and API key.
+
 ## Project setup
 ```
 npm install

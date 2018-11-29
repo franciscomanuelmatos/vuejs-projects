@@ -1,5 +1,7 @@
 # video-browser
 
+To run this project you will need a Youtube Data API key.
+
 ## Project setup
 ```
 npm install
