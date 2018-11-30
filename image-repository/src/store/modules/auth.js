@@ -1,3 +1,5 @@
+import imgur from '../../api/imgur';
+
 const state = {
   token: null
 }
@@ -11,10 +13,10 @@ const actions = {
     commit('setToken', null);
   },
   finalizeLogin: () => {
-    const urlString = "https://api.imgur.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&response_type=token&state=APPLICATION_STATE";
+    
   },
   login: () => {
-
+    imgur.login();
   }
 }
 
@@ -22,4 +24,11 @@ const mutations = {
   setToken: (state, token) => {
     state.token = token;
   }
+}
+
+export default {
+  state,
+  getters,
+  mutations,
+  actions
 }
