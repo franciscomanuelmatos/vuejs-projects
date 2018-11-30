@@ -2,10 +2,14 @@
   <div class="ui secondary pointing menu">
     <a href="/" class="active item">Image Repository</a>
 
-    
     <div class="right menu">
-      <a href="#" class="ui item" @click="logout"  v-if="isLoggedIn">Logout</a>
-      <a href="#" class="ui item" @click="login"  v-else>Login</a>
+      <div v-if="isLoggedIn" class="horizontal">
+        <a href="#" class="item">Gallery</a>
+        <a href="#" class="item">Upload</a>
+        <a href="#" class="ui item" @click="logout">Logout</a>
+      </div>
+      
+      <a v-else href="#" class="ui item" @click="login">Login</a>
     </div>
   </div>  
 </template>
@@ -25,5 +29,8 @@ export default {
 </script>
 
 <style scoped>
-
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
 </style>

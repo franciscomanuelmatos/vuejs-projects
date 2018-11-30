@@ -1,8 +1,9 @@
 import imgur from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main';
 
 const state = {
-  token: null
+  token: localStorage.getItem('imgur_token')
 }
 
 const getters = {
@@ -11,11 +12,14 @@ const getters = {
 
 const actions = {
   logout: ({ commit }) => {
+    localStorage.removeItem('imgur_token');
     commit('setToken', null);
   },
   finalizeLogin: ({ commit }, urlHash) => {
     const { access_token } = qs.parse(urlHash.replace('#', ''));
+    localStorage.setItem('imgur_token', access_token);
     commit('setToken', access_token);
+    router.push('/');
   },
   login: () => {
     imgur.login();
