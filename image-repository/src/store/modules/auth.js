@@ -14,6 +14,7 @@ const actions = {
   logout: ({ commit }) => {
     localStorage.removeItem('imgur_token');
     commit('setToken', null);
+    router.push('/');
   },
   finalizeLogin: ({ commit }, urlHash) => {
     const { access_token } = qs.parse(urlHash.replace('#', ''));
