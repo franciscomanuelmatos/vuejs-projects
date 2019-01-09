@@ -1,6 +1,7 @@
 # image-repository
 
 To run this project you will need an Imgur account and API key.
+In src/api/imgur.js assign your client id to the const CLIENT_ID.
 
 ## Project setup
 ```
